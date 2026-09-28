@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import LeadForm from './LeadForm'
 import { heroSlides } from '../lib/images'
-import { RERA_NO } from '../lib/config'
+import { RERA_NO, PHONE_NUMBER } from '../lib/config'
 
 // Slides extended with clones at both ends for seamless infinite circular loop
 const extendedSlides = [
@@ -222,7 +222,7 @@ const Hero = ({ setIsOpen }) => {
                     <span>Book VIP Visit</span>
                   </button>
                   <a
-                    href="tel:+919560582493"
+                    href={`tel:${PHONE_NUMBER}`}
                     className="text-emerald-400 hover:underline flex items-center gap-1.5 font-semibold"
                   >
                     <i className="fas fa-phone text-[11px]" />

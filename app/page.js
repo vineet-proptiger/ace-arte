@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 
-import { PROJECT_NAME } from '../lib/config'
+import { PROJECT_NAME, PHONE_NUMBER, WHATSAPP_NUMBER } from '../lib/config'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 
@@ -63,7 +63,7 @@ export default function Home() {
       <div className="sticky-bottom-bar">
         <a
           id="mobile-call"
-          href="tel:+919560582493"
+          href={`tel:${PHONE_NUMBER}`}
           className="flex-1 flex flex-col items-center justify-center py-2 px-1"
           style={{ background: '#1a1a1a', borderRight: '1px solid #333' }}
         >
@@ -88,7 +88,7 @@ export default function Home() {
           <span className="text-[11px] sm:text-[12px] font-bold text-white mt-1 leading-none">ENQUIRE</span>
         </button>
         <a
-          href={`https://wa.me/919560582493?text=Hi%20I%20am%20interested%20in%20${encodeURIComponent(PROJECT_NAME)}`}
+          href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20I%20am%20interested%20in%20${encodeURIComponent(PROJECT_NAME)}`}
           target="_blank" rel="noopener noreferrer"
           className="flex-1 flex flex-col items-center justify-center py-2 px-1"
           style={{ background: '#25D366' }}
