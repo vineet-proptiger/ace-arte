@@ -13,9 +13,9 @@ const highlights = [
     icon: 'fa-solid fa-ruler-combined'
   },
   {
-    title: 'Project Area',
-    description: 'Project Area: 14.83 Acres.',
-    icon: 'fa-solid fa-chart-area'
+    title: '80% Green Living',
+    description: 'Expansive central green with around 80% open landscaped area.',
+    icon: 'fa-solid fa-tree'
   },
   {
     title: 'Low Density Living',
