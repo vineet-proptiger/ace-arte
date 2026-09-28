@@ -79,7 +79,7 @@ const Overview = ({ setIsOpen }) => {
                     <i className="fa-solid fa-circle-check text-[18px] sm:text-[22px]"></i>
                   </div>
                   <div>
-                    <h5 className="text-[#222222] font-bold text-[13.5px] sm:text-[16px] mb-1 leading-snug">Project Size</h5>
+                    <h5 className="text-[#222222] font-bold text-[13.5px] sm:text-[16px] mb-1 leading-snug">Land Parcel Area</h5>
                     <p className="text-[#6c757d] text-[12px] sm:text-[14px] m-0 leading-normal">~15 Acres</p>
                   </div>
                 </div>
@@ -99,8 +99,8 @@ const Overview = ({ setIsOpen }) => {
                     <i className="fa-solid fa-circle-check text-[18px] sm:text-[22px]"></i>
                   </div>
                   <div>
-                    <h5 className="text-[#222222] font-bold text-[13.5px] sm:text-[16px] mb-1 leading-snug">Investment Potential</h5>
-                    <p className="text-[#6c757d] text-[12px] sm:text-[14px] m-0 leading-normal">High Growth Corridor</p>
+                    <h5 className="text-[#222222] font-bold text-[13.5px] sm:text-[16px] mb-1 leading-snug">Luxury Clubhouse</h5>
+                    <p className="text-[#6c757d] text-[12px] sm:text-[14px] m-0 leading-normal">~50,000 Sq. Ft.</p>
                   </div>
                 </div>
               </div>

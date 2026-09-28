@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import LeadForm from './LeadForm'
 import { heroSlides } from '../lib/images'
+import { RERA_NO } from '../lib/config'
 
 // Slides extended with clones at both ends for seamless infinite circular loop
 const extendedSlides = [
@@ -142,17 +143,17 @@ const Hero = ({ setIsOpen }) => {
                 })}
               </div>
 
-              {/* Micro Value Badges */}
-              <div className="flex flex-wrap items-center gap-3 sm:gap-5 mt-4 text-[11px] sm:text-xs text-white/70">
-                <span className="inline-flex items-center gap-1.5">
-                  <i className="fas fa-gem text-[#d93843]" /> ~15 Acres Green Township
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <i className="fas fa-building text-amber-400" /> 11 Towers, 23 Floors
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <i className="fas fa-car-side text-emerald-400" /> Free Site Cab
-                </span>
+              {/* Project RERA Number Box */}
+              <div className="mt-4">
+                <div className="inline-flex items-center bg-white/[0.06] border border-white/15 rounded-lg py-2.5 px-4 shadow-sm text-xs sm:text-[13.5px] backdrop-blur-sm transition-all hover:border-white/30">
+                  <i className="fas fa-shield-halved text-emerald-400 mr-2 text-[13px]" />
+                  <span className="text-white/70 mr-1.5 font-medium">
+                    RERA No :
+                  </span>
+                  <span className="text-white font-bold tracking-wider">
+                    {RERA_NO}
+                  </span>
+                </div>
               </div>
 
             </div>
@@ -199,9 +200,6 @@ const Hero = ({ setIsOpen }) => {
               >
                 {/* Header */}
                 <div className="text-center mb-4 sm:mb-5">
-                  {/* <span className="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wider uppercase text-[#d93843] bg-[#b31c26]/15 border border-[#b31c26]/30 mb-1.5">
-                    EXCLUSIVE PRE-LAUNCH ACCESS
-                  </span> */}
                   <h3 className="text-lg xs:text-xl sm:text-2xl font-black text-white tracking-tight m-0">
                     Get Instant Cost Sheet &amp; Plans
                   </h3>
@@ -231,11 +229,6 @@ const Hero = ({ setIsOpen }) => {
                     <span>Call Sales Desk</span>
                   </a>
                 </div>
-
-                {/* Reassurance */}
-                {/* <p className="text-center text-[10px] text-white/40 mt-2.5 mb-0">
-                  🔒 Verified Channel Partner • No Spam Guarantee
-                </p> */}
               </div>
             </div>
 
