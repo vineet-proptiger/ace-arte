@@ -163,26 +163,26 @@ const Hero = ({ setIsOpen }) => {
             <div className="lg:col-span-5 mt-2 lg:mt-0 flex flex-col">
 
               {/* Key Quick Specs Strip (Moved above the form) */}
-              <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 sm:gap-4 lg:gap-5 p-3 sm:p-4 mb-5 rounded-2xl bg-white/5 border border-white/30 text-xs sm:text-sm shadow-lg">
+              <div className="flex flex-row flex-wrap items-center justify-between gap-x-2 gap-y-3 sm:gap-4 lg:gap-5 p-2.5 sm:p-4 mb-5 rounded-2xl bg-white/5 border border-white/30 text-xs sm:text-sm shadow-lg w-full">
                 <div className="flex-shrink-0">
-                  <span className="text-white/60 text-[10.5px] uppercase block mb-0.5">Price</span>
+                  <span className="text-white/60 text-[9.5px] sm:text-[10.5px] uppercase block mb-0.5">Price</span>
                   <div className="flex items-center gap-1.5">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d5a] opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff4d5a]"></span>
                     </span>
-                    <strong className="blink-price font-black text-[16px] sm:text-[19px] whitespace-nowrap tracking-tight">
+                    <strong className="blink-price font-black text-[14.5px] sm:text-[19px] whitespace-nowrap tracking-tight">
                       ₹ 3.23 Cr* Onwards
                     </strong>
                   </div>
                 </div>
-                <div className="border-l border-white/20 pl-3 sm:pl-4 lg:pl-5 flex-shrink-0">
-                  <span className="text-white/60 text-[10.5px] uppercase block mb-0.5">Typology</span>
-                  <strong className="text-white font-bold text-[13px] sm:text-[14px] whitespace-nowrap">3 &amp; 4 BHK</strong>
+                <div className="border-l border-white/20 pl-2 sm:pl-4 lg:pl-5 flex-shrink-0">
+                  <span className="text-white/60 text-[9.5px] sm:text-[10.5px] uppercase block mb-0.5">Typology</span>
+                  <strong className="text-white font-bold text-[12px] sm:text-[14px] whitespace-nowrap">3 &amp; 4 BHK</strong>
                 </div>
-                <div className="border-l border-white/20 pl-3 sm:pl-4 lg:pl-5 flex-shrink-0">
-                  <span className="text-white/60 text-[10.5px] uppercase block mb-0.5">Status</span>
-                  <strong className="text-emerald-400 font-bold text-[13px] sm:text-[14px] whitespace-nowrap">New Launch</strong>
+                <div className="border-l border-white/20 pl-2 sm:pl-4 lg:pl-5 flex-shrink-0">
+                  <span className="text-white/60 text-[9.5px] sm:text-[10.5px] uppercase block mb-0.5">Status</span>
+                  <strong className="text-emerald-400 font-bold text-[12px] sm:text-[14px] whitespace-nowrap">New Launch</strong>
                 </div>
               </div>
 
@@ -211,7 +211,7 @@ const Hero = ({ setIsOpen }) => {
                 </div>
 
                 {/* LeadForm */}
-                <LeadForm formName="Hero Optimized Form" btnText="Get Cost Sheet on WhatsApp" />
+                <LeadForm formName="Ace Form" btnText="Get Cost Sheet on WhatsApp" />
 
                 {/* Instant Actions (Call & Visit on Mobile) */}
                 <div className="mt-3.5 pt-3.5 border-t border-white/10 flex items-center justify-between text-[11.5px] sm:text-xs text-white/80">
