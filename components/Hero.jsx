@@ -1,11 +1,18 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import LeadForm from './LeadForm'
 import { heroSlides } from '../lib/images'
 
 const Hero = ({ setIsOpen }) => {
   const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroSlides.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <section
@@ -52,17 +59,27 @@ const Hero = ({ setIsOpen }) => {
                 </div>
               </div>
 
-              {/* ── 100% CLEAN IMAGE (No text, no overlays, pure photo) ── */}
+              {/* ── 100% CLEAN IMAGE (Sliding carousel) ── */}
               <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-black">
-                <div className="relative w-full h-[220px] xs:h-[250px] sm:h-[310px] md:h-[350px] lg:h-[370px]">
-                  <Image
-                    src={heroSlides[activeSlide].img}
-                    alt={heroSlides[activeSlide].name}
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 55vw"
-                  />
+                <div 
+                  className="flex transition-transform duration-700 ease-in-out w-full"
+                  style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                >
+                  {heroSlides.map((slide, idx) => (
+                    <div 
+                      key={slide.id || idx} 
+                      className="relative w-full h-[220px] xs:h-[250px] sm:h-[310px] md:h-[350px] lg:h-[370px] flex-shrink-0"
+                    >
+                      <Image
+                        src={slide.img}
+                        alt={slide.name}
+                        fill
+                        priority={idx === 0}
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 55vw"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
 
