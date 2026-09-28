@@ -4,15 +4,46 @@ import Image from 'next/image'
 import LeadForm from './LeadForm'
 import { heroSlides } from '../lib/images'
 
-const Hero = ({ setIsOpen }) => {
-  const [activeSlide, setActiveSlide] = useState(0)
+// Slides extended with clones at both ends for seamless infinite circular loop
+const extendedSlides = [
+  heroSlides[heroSlides.length - 1],
+  ...heroSlides,
+  heroSlides[0],
+]
 
+const Hero = ({ setIsOpen }) => {
+  const [currentIndex, setCurrentIndex] = useState(1)
+  const [isTransitioning, setIsTransitioning] = useState(true)
+
+  // Infinite circular auto-play timer
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 4000)
+      setIsTransitioning(true)
+      setCurrentIndex((prev) => prev + 1)
+    }, 3800)
     return () => clearInterval(timer)
   }, [])
+
+  const handleTransitionEnd = () => {
+    if (currentIndex >= extendedSlides.length - 1) {
+      // Reached the clone at the end -> jump back to real first slide seamlessly
+      setIsTransitioning(false)
+      setCurrentIndex(1)
+      setTimeout(() => {
+        setIsTransitioning(true)
+      }, 50)
+    } else if (currentIndex <= 0) {
+      // Reached the clone at start -> jump back to real last slide seamlessly
+      setIsTransitioning(false)
+      setCurrentIndex(extendedSlides.length - 2)
+      setTimeout(() => {
+        setIsTransitioning(true)
+      }, 50)
+    }
+  }
+
+  // Active slide index (0 to 3) for highlighting tabs
+  const activeSlide = (currentIndex - 1 + heroSlides.length) % heroSlides.length
 
   return (
     <section
@@ -54,27 +85,30 @@ const Hero = ({ setIsOpen }) => {
                   <span className="text-white/30 hidden xs:inline">•</span>
                   <span className="inline-flex items-center gap-1.5 text-white/80 font-medium">
                     <i className="fas fa-location-dot text-[#ff4d5a] text-[11px]" />
-                    <span>Sector 150, Noida Expressway</span>
+                    <span>Sector 150,Yamuna Expressway Noida</span>
                   </span>
                 </div>
               </div>
 
-              {/* ── 100% CLEAN IMAGE (Sliding carousel) ── */}
+              {/* ── 100% CLEAN IMAGE (Infinite circular carousel) ── */}
               <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-black">
                 <div 
-                  className="flex transition-transform duration-700 ease-in-out w-full"
-                  style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                  onTransitionEnd={handleTransitionEnd}
+                  className={`flex w-full ${
+                    isTransitioning ? 'transition-transform duration-700 ease-in-out' : 'transition-none'
+                  }`}
+                  style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
-                  {heroSlides.map((slide, idx) => (
+                  {extendedSlides.map((slide, idx) => (
                     <div 
-                      key={slide.id || idx} 
+                      key={`${slide.id}-${idx}`} 
                       className="relative w-full h-[220px] xs:h-[250px] sm:h-[310px] md:h-[350px] lg:h-[370px] flex-shrink-0"
                     >
                       <Image
                         src={slide.img}
                         alt={slide.name}
                         fill
-                        priority={idx === 0}
+                        priority={idx === 1}
                         className="object-cover"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 55vw"
                       />
@@ -91,7 +125,10 @@ const Hero = ({ setIsOpen }) => {
                     <button
                       key={slide.id}
                       type="button"
-                      onClick={() => setActiveSlide(idx)}
+                      onClick={() => {
+                        setIsTransitioning(true)
+                        setCurrentIndex(idx + 1)
+                      }}
                       className={`py-2 px-1 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer text-center border truncate ${
                         isActive
                           ? 'bg-[#b31c26] text-white border-[#b31c26] shadow-md'
@@ -126,25 +163,26 @@ const Hero = ({ setIsOpen }) => {
             <div className="lg:col-span-5 mt-2 lg:mt-0 flex flex-col">
 
               {/* Key Quick Specs Strip (Moved above the form) */}
-              <div className="flex flex-wrap items-center justify-between sm:justify-start gap-3 sm:gap-6 p-3 sm:p-4 mb-5 rounded-2xl bg-white/5 border border-white text-xs sm:text-sm shadow-lg">
-                <div>
+              <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 sm:gap-4 lg:gap-5 p-3 sm:p-4 mb-5 rounded-2xl bg-white/5 border border-white/30 text-xs sm:text-sm shadow-lg">
+                <div className="flex-shrink-0">
                   <span className="text-white/60 text-[10.5px] uppercase block mb-0.5">Price</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5">
                     <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d5a] opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff4d5a]"></span>
                     </span>
-                    <strong className="font-black text-[15px] sm:text-[16px] tracking-tight">
+                    <strong className="blink-price font-black text-[16px] sm:text-[19px] whitespace-nowrap tracking-tight">
                       ₹ 3.23 Cr* Onwards
                     </strong>
                   </div>
                 </div>
-                <div className="border-l border-white/30 pl-3 sm:pl-6">
+                <div className="border-l border-white/20 pl-3 sm:pl-4 lg:pl-5 flex-shrink-0">
                   <span className="text-white/60 text-[10.5px] uppercase block mb-0.5">Typology</span>
-                  <strong className="text-white font-bold text-[14px] sm:text-[15px]">3 &amp; 4 BHK</strong>
+                  <strong className="text-white font-bold text-[13px] sm:text-[14px] whitespace-nowrap">3 &amp; 4 BHK</strong>
                 </div>
-                <div className="border-l border-white/30 pl-3 sm:pl-6">
+                <div className="border-l border-white/20 pl-3 sm:pl-4 lg:pl-5 flex-shrink-0">
                   <span className="text-white/60 text-[10.5px] uppercase block mb-0.5">Status</span>
-                  <strong className="text-emerald-400 font-bold text-[14px] sm:text-[15px]">New Launch</strong>
+                  <strong className="text-emerald-400 font-bold text-[13px] sm:text-[14px] whitespace-nowrap">New Launch</strong>
                 </div>
               </div>
 

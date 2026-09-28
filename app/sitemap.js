@@ -1,4 +1,4 @@
-const BASE_URL = 'http://aceartesector150.com'
+const BASE_URL = 'https://acegroupprojects.co.in'
 
 export default function sitemap() {
   return [

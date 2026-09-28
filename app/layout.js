@@ -40,7 +40,7 @@ const nephilm = localFont({
 })
 
 export const metadata = {
-  metadataBase: new URL('http://aceartesector150.com'),
+  metadataBase: new URL('https://acegroupprojects.co.in'),
   title: 'ACE Arte Sector 150 | Ultra-modern Neo-classical Residences Noida',
   description: 'ACE Arte Sector 150 — Premium Wellness Residences. RERA Registered. Starting ₹3.23 Cr*. Authorized Channel Partner: Crownmark Estates Private Limited.',
   alternates: {
@@ -49,7 +49,7 @@ export const metadata = {
   openGraph: {
     title: 'ACE Arte Sector 150 | Ultra-modern Neo-classical Residences Noida',
     description: 'ACE Arte Sector 150 — Premium Wellness Residences. RERA Registered. Starting ₹3.23 Cr*. Authorized Channel Partner: Crownmark Estates Private Limited.',
-    url: 'http://aceartesector150.com',
+    url: 'https://acegroupprojects.co.in',
     siteName: 'ACE Arte Sector 150',
     type: 'website',
   },

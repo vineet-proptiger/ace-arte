@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'http://aceartesector150.com/sitemap.xml',
+    sitemap: 'https://acegroupprojects.co.in/sitemap.xml',
   }
 }

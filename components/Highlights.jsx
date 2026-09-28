@@ -4,7 +4,7 @@ import React from 'react'
 const highlights = [
   {
     title: 'Prime Location',
-    description: 'Luxury 3 and 4 BHK apartments located in Sector 150, Noida Expressway.',
+    description: 'Luxury 3 and 4 BHK apartments located in Sector 150,Yamuna Expressway Noida.',
     icon: 'fa-solid fa-location-dot'
   },
   {
