@@ -1,87 +1,93 @@
 'use client'
 import React from 'react'
-import Image from 'next/image'
-import { locationMap } from '../lib/images'
 
 const locationList = [
   {
-    icon: 'fa-solid fa-road',
+    title: 'Noida–Greater Noida Expressway',
+    time: '2 Mins',
+  },
+  {
+    title: 'Sector 148 Aqua Line Metro Station',
+    time: '8 Mins',
+  },
+  {
     title: 'Yamuna Expressway',
-    time: '2 Min'
+    time: '10 Mins',
   },
   {
-    icon: 'fa-solid fa-plane',
-    title: 'Jewar Airport',
-    time: '30 min'
+    title: 'Advant Navis Business Park',
+    time: 'Approx. 10 Mins',
   },
   {
-    icon: 'fa-solid fa-train-subway',
-    title: 'Proposed Metro Station',
-    time: '5 min'
+    title: 'Noida International Airport',
+    time: '35 Mins',
   },
   {
-    icon: 'fa-solid fa-road',
-    title: 'Noida-Gr. Noida Expressway',
-    time: '5 min'
-  }
+    title: 'Jaypee Greens Golf Resort',
+    time: 'Approx. 25 Mins',
+  },
 ]
 
 const Location = () => {
   return (
-    <section id="location" className="location-section py-16 md:py-24 bg-white font-poppins overflow-hidden" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
-      <div className="container mx-auto px-4 sm:px-6 max-w-[1350px]">
+    <section id="location" className="location-section py-16 md:py-20 bg-white font-poppins overflow-hidden" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1300px]">
         
         {/* Section Title */}
-        <div className="text-center max-w-[780px] mx-auto mb-14 md:mb-16" data-aos="fade-up">
-          <span className="text-[#b31c26] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-3 block">
+        <div className="text-center max-w-[780px] mx-auto mb-10 md:mb-12" data-aos="fade-up">
+          <span className="text-[#b31c26] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-2.5 block">
             LOCATION ADVANTAGES
           </span>
           <h2 className="text-[#111111] text-[26px] sm:text-[32px] md:text-[38px] font-extrabold m-0 leading-tight">
-            Location & Connectivity
+            Location &amp; Connectivity
           </h2>
         </div>
 
-        {/* ── 2-Column Grid: Left List / Right Image ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        {/* ── 2-Column Grid: Left List (Thin Sleek Cards) / Right Map ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           
-          {/* Left: Location List */}
-          <div className="flex flex-col gap-4 justify-center">
+          {/* Left: 6 Location Points (Slim & Thin Grid) */}
+          <div className="flex flex-col gap-2.5 sm:gap-3 justify-center">
             {locationList.map((item, index) => (
               <div
                 key={index}
                 data-aos="fade-right"
-                data-aos-delay={(index * 60).toString()}
-                className="group bg-white hover:bg-[#b31c26] border border-[#fbe6e7] hover:border-[#b31c26] rounded-[18px] p-4 sm:p-5 flex items-center justify-between shadow-[0_4px_18px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_rgba(179, 28, 38,0.25)] transition-all duration-300 cursor-pointer"
+                data-aos-delay={(index * 40).toString()}
+                className="group bg-white hover:bg-[#fff8f8] border border-[#f1dedf] hover:border-[#b31c26]/60 rounded-[12px] px-3.5 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_16px_rgba(179,28,38,0.12)] transition-all duration-200"
               >
-                {/* Left side: Icon & Title */}
-                <div className="flex items-center gap-4 sm:gap-5">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[14px] bg-[#fbe6e7] group-hover:bg-white/20 text-[#b31c26] group-hover:text-white flex items-center justify-center text-[22px] sm:text-[24px] flex-shrink-0 transition-all duration-300 shadow-xs">
-                    <i className={item.icon}></i>
+                {/* Left side: Red Pin Icon & Title */}
+                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#fbe6e7] group-hover:bg-[#b31c26] text-[#b31c26] group-hover:text-white flex items-center justify-center text-[12px] sm:text-[13px] shrink-0 transition-colors duration-200">
+                    <i className="fa-solid fa-location-dot"></i>
                   </div>
-                  <span className="text-[#111111] group-hover:text-white font-bold text-[16px] sm:text-[18px] transition-colors duration-300">
+                  <span className="text-[#1f2937] group-hover:text-[#b31c26] font-semibold text-[13.5px] sm:text-[14.5px] transition-colors duration-200 leading-snug">
                     {item.title}
                   </span>
                 </div>
 
-                {/* Right side: Time/Distance Number */}
-                <span className="bg-[#fbe6e7] group-hover:bg-white text-[#b31c26] font-extrabold text-[14px] sm:text-[15px] px-4 py-1.5 rounded-full whitespace-nowrap transition-all duration-300 shadow-xs">
+                {/* Right side: Time Badge */}
+                <span className="bg-[#fbe6e7] group-hover:bg-[#b31c26] text-[#b31c26] group-hover:text-white font-bold text-[11.5px] sm:text-[12.5px] px-3 py-1 rounded-full whitespace-nowrap transition-colors duration-200 shrink-0 shadow-xs">
                   {item.time}
                 </span>
               </div>
             ))}
           </div>
 
-          {/* Right: Location Map Image */}
+          {/* Right: Google Maps Embed */}
           <div 
-            className="relative w-full h-full min-h-[360px] rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-gray-200 bg-gray-100"
+            className="relative w-full h-full min-h-[380px] sm:min-h-[440px] rounded-[20px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200 bg-gray-100"
             data-aos="fade-left"
           >
-            <Image
-              src={locationMap}
-              alt="ACE Arte Sector 150 Location Map"
-              fill
-              className="object-cover w-full h-full hover:scale-[1.02] transition-transform duration-500"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28070.25497590825!2d77.492828!3d28.425838!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1a9a3376253%3A0x98084e274c6ee6b5!2sAce%20Arte!5e0!3m2!1sen!2sin!4v1790575254147!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: '380px' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Ace Arte Google Maps Location"
+              className="w-full h-full block"
             />
           </div>
 

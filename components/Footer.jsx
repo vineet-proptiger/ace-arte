@@ -31,7 +31,7 @@ const Footer = () => (
         data-aos="fade-up" data-aos-delay="100"
         className="text-[#a1a1aa] text-[15px] sm:text-[16px] leading-[1.8] max-w-[920px] mb-10"
       >
-        On one of Noida's most sought-after corridors, ACE Arte rises as an ultra-luxury landmark — 11 iconic towers of 23 floors with a striking premium façade, holding just 784 exclusive residences across 15 landscaped acres.
+        ACE Group is a prominent real estate developer based in Noida, with a portfolio spanning premium residential, commercial and mixed-use developments across Noida and the Delhi-NCR region. The group has developed projects across key locations including Sector 150, Sector 126, Sector 153 and Greater Noida West. Its residential portfolio includes ACE Golfshire, ACE Parkway, ACE Starlit, ACE Divino, ACE City and ACE Arte.
       </p>
 
       {/* ── RERA Number Box ── */}
@@ -43,7 +43,7 @@ const Footer = () => (
           RERA No :
         </span>
         <span className="text-white font-bold text-[14px] sm:text-[15.5px] tracking-wide">
-          Coming Soon (Subject to official approvals)
+          UPRERAPRJ242904/05/2026
         </span>
       </div>
 
