@@ -30,7 +30,7 @@ const locationList = [
 
 const Location = () => {
   return (
-    <section id="location" className="location-section py-16 md:py-20 bg-white font-poppins overflow-hidden" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
+    <section id="location" className="location-section py-10 md:py-14 bg-white font-poppins overflow-hidden" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
       <div className="container mx-auto px-4 sm:px-6 max-w-[1300px]">
         
         {/* Section Title */}

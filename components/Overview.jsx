@@ -7,12 +7,12 @@ const Overview = ({ setIsOpen }) => {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <section id="overview" className="w-full py-[100px] bg-white font-poppins">
+    <section id="overview" className="w-full py-10 md:py-14 bg-white font-poppins">
       <div className="container mx-auto px-4" style={{ maxWidth: '1200px' }}>
-        <div className="flex flex-col lg:flex-row items-center lg:mx-[-12px]">
+        <div className="flex flex-col lg:flex-row items-start lg:mx-[-12px]">
           
           {/* Image Column */}
-          <div className="w-full lg:w-1/2 lg:px-[12px] mb-10 lg:mb-0 flex justify-center">
+          <div className="w-full lg:w-1/2 lg:px-[12px] mb-10 lg:mb-0 flex justify-center lg:sticky lg:top-24">
             <div className="relative w-full max-w-[480px] h-[320px] sm:h-[380px] md:h-[430px] lg:h-[470px] rounded-[20px] overflow-hidden shadow-[0_10px_35px_rgba(0,0,0,0.08)]">
                <Image 
                  src={overviewImage} 
@@ -36,12 +36,12 @@ const Overview = ({ setIsOpen }) => {
               <h2 className="text-[#111111] text-[25px] sm:text-[30px] md:text-[38px] font-extrabold leading-[1.2] mb-4">
                 Overview
               </h2>
-              <div className="mb-8 pr-0 lg:pr-6">
-                <div className={`text-[#6c757d] text-[15px] leading-[1.7] space-y-4 ${!isExpanded ? 'line-clamp-5 overflow-hidden' : ''}`}>
-                  <p>
+              <div className="mb-5 pr-0 lg:pr-6">
+                <div className={`text-[#6c757d] text-[15px] leading-[1.7] text-justify ${!isExpanded ? 'line-clamp-5 overflow-hidden' : ''}`}>
+                  <p className="m-0">
                     ACE Group proudly presents ACE Arte, a new launch residential project located in the prime location of Sector 150, Noida, near the Yamuna Expressway and Noida-Greater Noida Expressway. Designed to redefine luxury living with ultra-modern neo-classical 3 BHK and 4 BHK apartments, the project is spread across approximately 15 acres with 11 towers of 23 floors, totalling 784 exclusive units, and an expansive central green with around 80% open and green landscaped areas.
                   </p>
-                  <p>
+                  <p className="m-0">
                     Every apartment is thoughtfully planned with spacious interiors, stylish design, wide balconies and premium finishes. Residents can enjoy a multi-level ultra-luxury clubhouse spanning around 50,000 sq.ft., along with a large pool, sun loungers, landscaped gardens, jogging track, gymnasium, sports facilities, kids&apos; play area and 24x7 security.
                   </p>
                 </div>
@@ -104,29 +104,6 @@ const Overview = ({ setIsOpen }) => {
                   </div>
                 </div>
               </div>
-
-              <button 
-                onClick={() => setIsOpen(true)}
-                className="mt-2 inline-flex items-center justify-center px-8 py-3.5 rounded-[50px] font-semibold text-[15px] transition-all duration-300"
-                style={{
-                  background: '#b31c26',
-                  color: '#ffffff',
-                  border: '2px solid #b31c26',
-                  boxShadow: '0 4px 14px 0 rgba(179, 28, 38, 0.39)'
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.background = '#ffffff';
-                  e.currentTarget.style.color = '#b31c26';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = '#b31c26';
-                  e.currentTarget.style.color = '#ffffff';
-                  e.currentTarget.style.transform = 'none';
-                }}
-              >
-                Request Full Details
-              </button>
             </div>
           </div>
 

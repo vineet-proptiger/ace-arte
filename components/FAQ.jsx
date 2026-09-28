@@ -47,7 +47,7 @@ const FAQ = () => {
   }
 
   return (
-    <section id="faq" className="w-full py-16 md:py-24 bg-white font-poppins overflow-hidden">
+    <section id="faq" className="w-full py-10 md:py-14 bg-white font-poppins overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1280px]">
         
         {/* Section Title */}

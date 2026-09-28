@@ -36,7 +36,7 @@ const highlights = [
 
 const Highlights = ({ setIsOpen }) => {
   return (
-    <section id="highlights" className="w-full py-16 md:py-24 font-poppins" style={{ background: '#fafafa' }}>
+    <section id="highlights" className="w-full py-10 md:py-14 font-poppins" style={{ background: '#fafafa' }}>
       <div className="container mx-auto px-4" style={{ maxWidth: '1280px' }}>
 
         {/* Header */}

@@ -15,7 +15,7 @@ const Gallery = () => {
   }
 
   return (
-    <section id="gallery" className="gallery-section py-16 md:py-20 bg-white overflow-hidden" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
+    <section id="gallery" className="gallery-section py-10 md:py-14 bg-white overflow-hidden" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
       <div className="container mx-auto px-4 sm:px-6 max-w-[1350px]">
         
         {/* Section Title */}

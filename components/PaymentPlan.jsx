@@ -26,7 +26,7 @@ const PaymentPlan = ({ setIsOpen }) => {
   return (
     <section
       id="payment-plan"
-      className="w-full py-16 md:py-24 font-poppins overflow-hidden"
+      className="w-full py-10 md:py-14 font-poppins overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #ffffff, #fafafa)',
       }}

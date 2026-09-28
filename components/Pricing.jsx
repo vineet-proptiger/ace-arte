@@ -16,7 +16,7 @@ const pricingData = [
 
 const Pricing = ({ setIsOpen }) => {
   return (
-    <section id="pricing" className="w-full py-16 md:py-24 font-poppins overflow-hidden" style={{ background: '#fafafa' }}>
+    <section id="pricing" className="w-full py-10 md:py-14 font-poppins overflow-hidden" style={{ background: '#fafafa' }}>
       <div className="container mx-auto px-4 sm:px-6" style={{ maxWidth: '1050px' }}>
         
         {/* Section Header */}

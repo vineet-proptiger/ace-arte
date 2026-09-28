@@ -2,71 +2,51 @@
 import React from 'react'
 
 const amenities = [
-  // {
-  //   title: 'Clubhouse',
-  //   description: '75,000 sq.ft. grand club',
-  //   icon: 'fa-solid fa-house'
-  // },
   {
-    title: 'Swimming Pool',
-    description: 'All-weather infinity pool',
-    icon: 'fa-solid fa-water-ladder'
-  },
-  {
-    title: 'Gymnasium',
-    description: 'Technology fitness equipment',
+    title: 'Gym',
+    description: 'Modern fitness equipment',
     icon: 'fa-solid fa-dumbbell'
   },
   {
-    title: 'Kids Play Area',
+    title: 'Club',
+    description: 'Exclusive resident clubhouse',
+    icon: 'fa-solid fa-house-chimney'
+  },
+  {
+    title: 'Restaurant',
+    description: 'Fine dining experience',
+    icon: 'fa-solid fa-utensils'
+  },
+  {
+    title: 'Banquet',
+    description: 'Premium celebration space',
+    icon: 'fa-solid fa-champagne-glasses'
+  },
+  {
+    title: 'Bar',
+    description: 'Elegant drinks & lounge',
+    icon: 'fa-solid fa-martini-glass-citrus'
+  },
+  {
+    title: 'Lawn Tennis',
+    description: 'Professional quality courts',
+    icon: 'fa-solid fa-baseball'
+  },
+  {
+    title: 'Kid Play Area',
     description: 'Safe & modern play zone',
     icon: 'fa-solid fa-child-reaching'
   },
   {
-    title: 'Jogging Track',
-    description: 'Synthetic rubber track',
-    icon: 'fa-solid fa-person-running'
-  },
-  // {
-  //   title: 'Landscaped Garden',
-  //   description: 'Zen garden & water bodies',
-  //   icon: 'fa-solid fa-tree'
-  // },
-  {
-    title: 'Indoor Games',
-    description: 'Snooker, Billiards & TT',
-    icon: 'fa-solid fa-table-tennis-paddle-ball'
-  },
-  {
-    title: 'Sports Court',
-    description: 'Tennis, Squash & Basketball',
-    icon: 'fa-solid fa-basketball'
-  },
-  {
-    title: 'Yoga Deck',
-    description: 'Peaceful & natural environment',
-    icon: 'fa-solid fa-spa'
-  },
-  // {
-  //   title: 'CCTV Security',
-  //   description: '5-Tier AI security system',
-  //   icon: 'fa-solid fa-shield-halved'
-  // },
-  // {
-  //   title: 'Power Backup',
-  //   description: '100% uninterrupted power supply',
-  //   icon: 'fa-solid fa-bolt'
-  // },
-  {
-    title: 'EV Charging',
-    description: 'Available at every parking bay',
-    icon: 'fa-solid fa-charging-station'
-  },
+    title: 'Concierge Service 24*7',
+    description: 'Premium round-the-clock support',
+    icon: 'fa-solid fa-bell-concierge'
+  }
 ]
 
 const Amenities = () => {
   return (
-    <section id="amenities" className="w-full py-[100px] font-poppins" style={{ background: '#f9f9f9' }}>
+    <section id="amenities" className="w-full py-10 md:py-14 font-poppins" style={{ background: '#f9f9f9' }}>
       <div className="container mx-auto px-4" style={{ maxWidth: '1280px' }}>
 
         {/* Section Title */}

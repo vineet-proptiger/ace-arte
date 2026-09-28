@@ -10,28 +10,15 @@ const Hero = ({ setIsOpen }) => {
   return (
     <section
       id="home"
-      className="hero-section relative bg-[#0f172a] text-white overflow-hidden"
+      className="hero-section relative bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#020617] text-white overflow-hidden"
       style={{
         fontFamily: 'var(--font-poppins), Poppins, sans-serif',
       }}
     >
-      {/* Dynamic blurred background based on active slide */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src={heroSlides[activeSlide].img}
-          alt="Background"
-          fill
-          priority
-          className="object-cover object-center blur-[80px] scale-125 opacity-40 transition-all duration-1000 ease-in-out"
-        />
-        {/* Elegant overlay gradient for depth and readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a]/70 via-[#0a0f1a]/90 to-[#020617] backdrop-blur-[2px]" />
-      </div>
-
       <div className="w-full pt-[82px] pb-8 sm:pt-[88px] sm:pb-10 lg:pt-[98px] lg:pb-12 relative z-10">
 
-        {/* Ambient subtle glow in background */}
-        <div className="absolute top-0 right-1/4 w-72 sm:w-[450px] h-72 sm:h-[450px] bg-[#b31c26]/20 rounded-full blur-[120px] pointer-events-none" />
+        {/* Ambient subtle glow in background (static) */}
+        <div className="absolute top-0 right-1/4 w-72 sm:w-[450px] h-72 sm:h-[450px] bg-[#b31c26]/15 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-3.5 sm:px-6" style={{ maxWidth: '1380px' }}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-start">
@@ -125,12 +112,11 @@ const Hero = ({ setIsOpen }) => {
               <div className="flex flex-wrap items-center justify-between sm:justify-start gap-3 sm:gap-6 p-3 sm:p-4 mb-5 rounded-2xl bg-white/5 border border-white text-xs sm:text-sm shadow-lg">
                 <div>
                   <span className="text-white/60 text-[10.5px] uppercase block mb-0.5">Price</span>
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d5a] opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff4d5a]"></span>
                     </span>
-                    <strong className="blink-price font-black text-[15px] sm:text-[16px] tracking-tight">
+                    <strong className="font-black text-[15px] sm:text-[16px] tracking-tight">
                       ₹ 3.23 Cr* Onwards
                     </strong>
                   </div>

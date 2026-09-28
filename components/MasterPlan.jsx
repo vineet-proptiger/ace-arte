@@ -6,7 +6,7 @@ const MasterPlan = ({ setIsOpen }) => {
   const [activeTab, setActiveTab] = useState('master')
 
   return (
-    <section id="masterplan" className="w-full py-16 md:py-24 font-poppins bg-white">
+    <section id="masterplan" className="w-full py-10 md:py-14 font-poppins bg-white">
       <div className="container mx-auto px-4 sm:px-6" style={{ maxWidth: '1200px' }}>
 
         {/* Section Header */}
