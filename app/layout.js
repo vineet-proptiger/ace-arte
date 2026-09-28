@@ -42,13 +42,13 @@ const nephilm = localFont({
 export const metadata = {
   metadataBase: new URL('https://acegroupprojects.co.in'),
   title: 'ACE Arte Sector 150 | Luxury 3 & 4 BHK Apartments Noida',
-  description: 'ACE Arte Sector 150 Noida offers luxury 3 & 4 BHK apartments starting ₹3.23 Cr*. RERA Registered project with premium amenities. Enquire for details!',
+  description: 'ACE Arte Sector 150 Noida offers luxury 3 & 4 BHK apartments starting ₹3.3 Cr*. RERA Registered project with premium amenities. Enquire for details!',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'ACE Arte Sector 150 | Luxury 3 & 4 BHK Apartments Noida',
-    description: 'ACE Arte Sector 150 Noida offers luxury 3 & 4 BHK apartments starting ₹3.23 Cr*. RERA Registered project with premium amenities. Enquire for details!',
+    description: 'ACE Arte Sector 150 Noida offers luxury 3 & 4 BHK apartments starting ₹3.3 Cr*. RERA Registered project with premium amenities. Enquire for details!',
     url: 'https://acegroupprojects.co.in',
     siteName: 'ACE Arte Sector 150',
     type: 'website',
