@@ -78,8 +78,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Now' }) => {
       <input
         type="email"
         name="email"
-        required
-        placeholder="Email Address*"
+        placeholder="Enter your email (Optional)"
         value={formData.email}
         onChange={handleChange}
         className="lead-form-input"
