@@ -56,11 +56,11 @@ export async function POST(request) {
     }
 
     /* ── User data ── */
-    const fullName = get('fullname')
+    const fullName = get('fullname') || get('name') || get('FullName')
     const projectName = get('projectName')
-    const nameParts = fullName.trim().split(/\s+/)
+    const nameParts = fullName.trim() ? fullName.trim().split(/\s+/) : []
     const firstName = nameParts[0] || ''
-    const lastName = nameParts[1] || firstName
+    const lastName = nameParts.slice(1).join(' ') || ''
 
     /* ── Tracking ── */
     const utmSource = get('utm_source') || 'Microsite'
@@ -86,7 +86,7 @@ export async function POST(request) {
       ProjectID: projectId,
       ProjectName: projectName,
 
-      FullName: `${firstName} ${lastName}`.trim(),
+      FullName: fullName || `${firstName} ${lastName}`.trim(),
       FirstName: firstName,
       LastName: lastName,
       Email: email,
@@ -159,7 +159,7 @@ export async function POST(request) {
     })
 
     const ptPayload = {
-      name: `${firstName} ${lastName}`.trim(),
+      name: fullName || `${firstName} ${lastName}`.trim(),
       email,
       phone,
       countryId: '1',
